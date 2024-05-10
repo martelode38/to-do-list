@@ -1,0 +1,31 @@
+.newTask {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: calc(0px - 1.5rem - 6px);
+}
+
+.input{
+    background: var(--gray500);
+    width: 39.875rem;
+    border: 0;
+    height: 3.375rem;
+    border-radius: 8px;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+.buttonTask {
+    width: 5.625rem;
+    height: 3.375rem;
+    border-radius: 8px;
+    background: var(--blueDark);
+    color: var(--gray100);
+    font-size: 0.875rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 0.125rem;
+    
+}
