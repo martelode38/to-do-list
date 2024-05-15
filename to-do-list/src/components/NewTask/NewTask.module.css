@@ -6,7 +6,7 @@
     margin-top: calc(0px - 1.5rem - 6px);
 }
 
-.input{
+.InputTask {
     background: var(--gray500);
     width: 39.875rem;
     border: 0;
@@ -14,6 +14,7 @@
     border-radius: 8px;
     padding: 1rem;
     font-size: 1rem;
+    color: var(--gray100);
 }
 
 .buttonTask {
@@ -27,5 +28,15 @@
     justify-content: center;
     display: flex;
     gap: 0.125rem;
+    border: 0;
+}
+
+.buttonTask:hover{
+    background: var(--blue);
+    cursor: pointer;
+}
+
+.InputTask:focus {
+    border: 1px solid var(--purpleDark);
     
 }

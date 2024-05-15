@@ -27,9 +27,11 @@
     padding: 0;
     box-sizing: border-box;
     font-family:Inter;
+    
 }
 
 body {
     color: var(--gray300);
     background: var(--gray600);
+    -webkit-font-smoothing: antialiased;
 }

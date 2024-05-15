@@ -1,0 +1,59 @@
+.bodyTask {
+    width: 46rem;
+    justify-content: center;
+    align-items: center;
+    margin: 49px auto 0;
+}
+
+.headerTask {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    margin-bottom: 1.5rem;
+}
+.criadas {
+    display: flex;
+    gap: 0.5rem;
+    color: var(--blue);
+    font-size: 14px;
+    font-weight: bold;
+}
+.concluidas {
+    display: flex;
+    gap: 0.5rem;
+    color: var(--purple);
+    font-size: 14px;
+    font-weight: bold;
+}
+.count {
+    color: var(--gray100);
+    background: var(--gray400);
+    width: 1.563rem;
+    height:1.188rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9px;
+    font-size: 12px;
+    
+}
+
+.tasks {
+    border-top: 0.2px solid var(--gray300);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 4rem;
+}
+
+.txt1 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.txt2{
+    font-size: 16px;
+}
