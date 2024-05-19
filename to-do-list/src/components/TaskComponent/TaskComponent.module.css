@@ -1,0 +1,24 @@
+.task {
+    background: var(--gray500);
+    border: 0.5px solid var(--gray400);
+    border-radius: 8px;
+    min-height: 4.5rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.task p {
+    color: var(--gray100);
+    width: 39.75rem;
+    font-size: 14px;
+
+}
+
+.caixaDeMarcar {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 999px;
+    border: 2px solid var(--blue);
+}

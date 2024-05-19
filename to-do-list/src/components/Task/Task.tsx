@@ -1,5 +1,7 @@
+import { SemTask } from '../SemTask/SemTask'
+import { TaskComponent } from '../TaskComponent/TaskComponent';
 import styles from './Task.module.css';
-import clip from '../../assents/ClipBoard.svg';
+
 
 export function Task(){
     return(
@@ -14,20 +16,19 @@ export function Task(){
 
                 <span className={styles.concluidas}>
                     Concluídas
-                    <span className={styles.count}>0</span>
+                    <span className={styles.count}>0 de 5</span>
                 </span>
 
             </div>
-
+            
             <div className={styles.tasks}>
-                <img src={clip} alt="clipboard" />
+                <SemTask/>
                 
-                <div>
-                    <p className={styles.txt1}>Você ainda não tem tarefas cadastradas</p>
-                    <p className={styles.txt2}>Crie tarefas e organize seus itens a fazer</p>
-                </div>
-
-            </div>
+                <TaskComponent/>
+                <TaskComponent/>
+                <TaskComponent/>
+                <TaskComponent/>
+           </div>
         </div>
     );
 }
