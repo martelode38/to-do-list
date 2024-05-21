@@ -9,7 +9,9 @@ export function TaskComponent(){
 
             <p>Levar o theo para passear na praia de iracema de caiaquinho eu ir atras de donas de dogs e ele atras das dogs</p>
 
+            <div className={styles.trash}>
             <Trash size={24}/>
+            </div>
         </div>
     );
 }

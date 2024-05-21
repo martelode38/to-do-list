@@ -22,7 +22,7 @@ export function Task(){
             </div>
             
             <div className={styles.tasks}>
-                <SemTask/>
+                
                 
                 <TaskComponent/>
                 <TaskComponent/>
