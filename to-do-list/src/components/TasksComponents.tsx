@@ -1,24 +1,50 @@
 import { PlusCircle } from "phosphor-react";
 import styles from './TasksComponents.module.css'
 import { Task } from "./Task";
+import { useState } from "react";
+import { SemTask } from "./SemTask";
 export function TasksComponents(){
+    
+    const [task, setTask] = useState([]);
+
+    const [newTask, setNewTask] = useState('');
+
+    function creatNewTask(){
+        event.preventDefault;
+
+        event.target.task.value;
+
+        setTask([...task, setNewTask]);
+        setNewTask('');
+
+    }
+
+    function newTaskChange(){
+        event.target.setCustomValidity('');
+        setNewTask(event.target.value);
+    }
+
+
     return(
         <div>
-             <form className={styles.newTask}>
+             <form onSubmit={creatNewTask} className={styles.newTask}>
             
             
-                <input 
-                    name="newTask"
+                <textarea 
+                    name="task"
+                    value={newTask}
+                    onChange={newTaskChange}
                     placeholder="Adicione uma nova tarefa"
                     className={styles.InputTask}
                     autoComplete="off"
+                    required={true}
                 />
 
 
             
             
 
-                <button className={styles.buttonTask}>
+                <button  type='submit' disabled = {newTask.length === 0} className={styles.buttonTask}>
                     Criar
                     <PlusCircle size={20}/>
                 </button>
@@ -30,7 +56,7 @@ export function TasksComponents(){
 
                     <span className={styles.criadas}>
                         Tarefas criadas
-                        <span className={styles.count}>0</span>
+                        <span className={styles.count}>{task.length}</span>
                     </span>
 
                     <span className={styles.concluidas}>
@@ -41,7 +67,13 @@ export function TasksComponents(){
                 </div>
             
                 <div className={styles.tasks}>
-                    <Task content= 'Levar o theo para passear amanha de  manha'/>  
+                    {task.length === 0 ? <SemTask/> : 
+                    task.map(task =>{
+                        return(
+                            <Task content={task}/>
+                        )
+                    })
+                }
                 </div>
             </div>
 

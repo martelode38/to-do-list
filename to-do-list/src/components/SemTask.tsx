@@ -1,5 +1,5 @@
 import styles from './SemTask.module.css';
-import clip from '../../assents/ClipBoard.svg';
+import clip from '../assents/ClipBoard.svg';
 export function SemTask(){
     return(
         <div className={styles.tasks}>
