@@ -1,6 +1,6 @@
-import { Header } from './components/Header/Header'
-import { NewTask } from './components/NewTask/NewTask'
-import { Task } from './components/Task/Task'
+import { Header } from './components/Header'
+import { TasksComponents } from './components/TasksComponents'
+
 import './global.css'
 
 function App() {
@@ -8,10 +8,7 @@ function App() {
   return (
     <div>
       <Header/>
-      
-      <NewTask/>
-
-      <Task/>
+      <TasksComponents/>
       
     </div>
   )

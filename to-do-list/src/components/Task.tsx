@@ -1,13 +1,18 @@
 import { Trash } from 'phosphor-react';
-import styles from './TaskComponent.module.css';
-export function TaskComponent(){
+import styles from './Task.module.css';
+
+interface taskProps{
+    content: string;
+    
+}
+export function Task({content}: taskProps){
     return(
         <div className={styles.task}>
             <div className={styles.caixaDeMarcar}>
 
             </div>
 
-            <p>Levar o theo para passear na praia de iracema de caiaquinho eu ir atras de donas de dogs e ele atras das dogs</p>
+            <p>{content}</p>
 
             <div className={styles.trash}>
             <Trash size={24}/>
