@@ -1,25 +1,23 @@
 import { PlusCircle } from "phosphor-react";
 import styles from './TasksComponents.module.css'
 import { Task } from "./Task";
-import { useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { SemTask } from "./SemTask";
 export function TasksComponents(){
     
-    const [task, setTask] = useState([]);
+    const [task, setTask] = useState<string[]>([]);
 
     const [newTask, setNewTask] = useState('');
 
-    function creatNewTask(){
-        event.preventDefault;
+    function createNewTask(event: FormEvent){
+        event.preventDefault();
 
-        event.target.task.value;
-
-        setTask([...task, setNewTask]);
+        setTask([...task, newTask]);
         setNewTask('');
 
     }
 
-    function newTaskChange(){
+    function newTaskChange(event: ChangeEvent<HTMLTextAreaElement>){
         event.target.setCustomValidity('');
         setNewTask(event.target.value);
     }
@@ -27,7 +25,7 @@ export function TasksComponents(){
 
     return(
         <div>
-             <form onSubmit={creatNewTask} className={styles.newTask}>
+             <form onSubmit={createNewTask} className={styles.newTask}>
             
             
                 <textarea 
