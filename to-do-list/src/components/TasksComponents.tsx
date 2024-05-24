@@ -22,6 +22,14 @@ export function TasksComponents(){
         setNewTask(event.target.value);
     }
 
+    function deleteTask(taskToDelete: string){
+        const oneTaskToDelete = task.filter(task =>{
+            return task != taskToDelete;
+        })
+        setTask(oneTaskToDelete); 
+    }
+
+
 
     return(
         <div>
@@ -36,6 +44,7 @@ export function TasksComponents(){
                     className={styles.InputTask}
                     autoComplete="off"
                     required={true}
+                    
                 />
 
 
@@ -59,7 +68,7 @@ export function TasksComponents(){
 
                     <span className={styles.concluidas}>
                         Concluídas
-                        <span className={styles.count}>0 de 5</span>
+                        <span className={styles.count}>0 de {task.length}</span>
                     </span>
 
                 </div>
@@ -68,7 +77,7 @@ export function TasksComponents(){
                     {task.length === 0 ? <SemTask/> : 
                     task.map(task =>{
                         return(
-                            <Task content={task}/>
+                            <Task content={task} deleteTask = {deleteTask}/>
                         )
                     })
                 }

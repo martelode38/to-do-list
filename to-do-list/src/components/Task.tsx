@@ -3,9 +3,17 @@ import styles from './Task.module.css';
 
 interface taskProps{
     content: string;
+    deleteTask: (task: string) => void;
     
 }
-export function Task({content}: taskProps){
+
+
+export function Task({content, deleteTask}: taskProps){
+    
+    function deleteOneTask(){
+        deleteTask(content);
+    }
+
     return(
         <div className={styles.task}>
             <div className={styles.caixaDeMarcar}>
@@ -14,7 +22,9 @@ export function Task({content}: taskProps){
 
             <p>{content}</p>
 
-            <div className={styles.trash}>
+            <div 
+            onClick = {deleteOneTask}
+            className={styles.trash}>
             <Trash size={24}/>
             </div>
         </div>
