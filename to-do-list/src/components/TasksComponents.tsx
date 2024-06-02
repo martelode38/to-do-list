@@ -85,7 +85,7 @@ export function TasksComponents(){
                     {task.length === 0 ? <SemTask/> : 
                     task.map(task =>{
                         return(
-                            <Task content={task.id} id={task.id}deleteTask={deleteTask}/>
+                            <Task content={task.text} id={task.id}deleteTask={deleteTask}/>
                         )
                     })
                 }
