@@ -67,7 +67,7 @@ export function TasksComponents(){
 
                     <span className={styles.criadas}>
                         Tarefas criadas
-                        <span className={styles.count}>0</span>
+                        <span className={styles.count}>{task.length}</span>
                     </span>
 
                     <span className={styles.concluidas}>
