@@ -5,13 +5,11 @@ import vector from '../assents/Vector.svg';
 
 interface taskProps{
     content: string;
-    deleteTask: (task: string) => void;
-
-}
-
-
-export function Task({content, deleteTask}: taskProps){
+    id: string;
+    deleteTask: (id:string) => void;
     
+}
+export function Task({content, id, deleteTask}: taskProps){
     const [click, setClick] = useState(false);
     
     
@@ -20,10 +18,8 @@ export function Task({content, deleteTask}: taskProps){
     }
 
     function deleteOneTask(){
-        deleteTask(content);
+        deleteTask(id);
     }
-
-
 
     return(
         <div className={styles.task}>
@@ -35,11 +31,9 @@ export function Task({content, deleteTask}: taskProps){
                 <img src={vector} alt="vector" />
             </div>
 
-            <p>{content}</p>
+            <p key={id}>{content}</p>
 
-            <div 
-            onClick = {deleteOneTask}
-            className={styles.trash}>
+            <div onClick = {deleteOneTask} className={styles.trash}>
             <Trash size={24}/>
             </div>
         </div>
