@@ -63,6 +63,15 @@
     
 }
 
+.trash{
+
+
+    border-radius: 4px;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+}
+
 .trash:hover{
     background: var(--gray400);
     color: var(--danger);

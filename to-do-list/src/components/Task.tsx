@@ -7,19 +7,23 @@ interface taskProps{
     content: string;
     id: string;
     deleteTask: (id:string) => void;
-    concluido: boolean;
+    concluirTask: (id:string, checked:boolean)=> void;
 }
-export function Task({content, id, deleteTask, concluido }: taskProps){
+export function Task({content, id, deleteTask, concluirTask }: taskProps){
     const [click, setClick] = useState(false);
     
     
     function botaoConcluir(){
-        setClick(!click); 
+        concluirTask(id, !click);
+        setClick(!click);
     }
+
+    
 
     function deleteOneTask(){
         deleteTask(id);
     }
+
 
 
     return(

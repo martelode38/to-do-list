@@ -34,9 +34,23 @@ export function TasksComponents(){
         setTask(semATaskDeletada);
     }
 
-    function concluirTask(taskConcluida:string){
-        const comATaskConcluida = task.filter(task => !task.concluido)
+    function concluirTask(id: string, checked: boolean){
+        const comATaskConcluida = task.map(task =>{
+            if(task.id === id){
+                return {...task, concluido: checked}
+            }
+            return {...task }
+        })
+        setTask(comATaskConcluida);
     }
+
+    const contarTasksConcluidas = task.reduce((acc, currentTask) => {
+        if(currentTask.concluido){
+            return acc + 1
+        }
+        return acc
+    },0
+    )
 
     
     return(
@@ -76,7 +90,7 @@ export function TasksComponents(){
 
                     <span className={styles.concluidas}>
                         Concluídas
-                        <span className={styles.count}>0 de {task.length}</span>
+                        <span className={styles.count}>{contarTasksConcluidas} de {task.length}</span>
                     </span>
 
                 </div>
@@ -89,7 +103,7 @@ export function TasksComponents(){
                     {task.length === 0 ? <SemTask/> : 
                     task.map(task =>{
                         return(
-                            <Task content={task.text} id={task.id}deleteTask={deleteTask}/>
+                            <Task content={task.text} id={task.id}deleteTask={deleteTask} concluirTask = {concluirTask}/>
                         )
                     })
                 }
