@@ -34,6 +34,10 @@ export function TasksComponents(){
         setTask(semATaskDeletada);
     }
 
+    function concluirTask(taskConcluida:string){
+        const comATaskConcluida = task.filter(task => !task.concluido)
+    }
+
     
     return(
         <div>

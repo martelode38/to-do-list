@@ -7,9 +7,9 @@ interface taskProps{
     content: string;
     id: string;
     deleteTask: (id:string) => void;
-    
+    concluido: boolean;
 }
-export function Task({content, id, deleteTask}: taskProps){
+export function Task({content, id, deleteTask, concluido }: taskProps){
     const [click, setClick] = useState(false);
     
     
@@ -21,6 +21,7 @@ export function Task({content, id, deleteTask}: taskProps){
         deleteTask(id);
     }
 
+
     return(
         <div className={styles.task}>
             
@@ -31,7 +32,9 @@ export function Task({content, id, deleteTask}: taskProps){
                 <img src={vector} alt="vector" />
             </div>
 
-            <p key={id}>{content}</p>
+            <p
+             className={click != true ? styles['p1'] : styles['p2']}
+            key={id}>{content}</p>
 
             <div onClick = {deleteOneTask} className={styles.trash}>
             <Trash size={24}/>

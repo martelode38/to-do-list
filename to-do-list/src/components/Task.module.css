@@ -9,8 +9,16 @@
     gap: 1rem;
 }
 
-.task p {
+.p1 {
     color: var(--gray100);
+    width: 39.75rem;
+    font-size: 14px;
+
+}
+
+.p2 {
+    color: var(--gray300);
+    text-decoration: line-through;
     width: 39.75rem;
     font-size: 14px;
 
