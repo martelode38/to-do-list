@@ -7,15 +7,15 @@ interface taskProps{
     content: string;
     id: string;
     deleteTask: (id:string) => void;
+    completed: boolean;
     concluirTask: (id:string, checked:boolean)=> void;
 }
-export function Task({content, id, deleteTask, concluirTask }: taskProps){
-    const [click, setClick] = useState(false);
+export function Task({content, id, deleteTask, concluirTask, completed}: taskProps){
     
     
     function botaoConcluir(){
-        concluirTask(id, !click);
-        setClick(!click);
+        
+        concluirTask(id, !completed);
     }
 
     
@@ -30,14 +30,14 @@ export function Task({content, id, deleteTask, concluirTask }: taskProps){
         <div className={styles.task}>
             
             <div
-            className={click != true ? styles['caixaDeMarcar'] : styles['caixaDeMarcarOn']}
+            className={completed != true ? styles['caixaDeMarcar'] : styles['caixaDeMarcarOn']}
             onClick={botaoConcluir}
             >
                 <img src={vector} alt="vector" />
             </div>
 
             <p
-             className={click != true ? styles['p1'] : styles['p2']}
+             className={completed != true ? styles['p1'] : styles['p2']}
             key={id}>{content}</p>
 
             <div onClick = {deleteOneTask} className={styles.trash}>
