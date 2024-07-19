@@ -1,30 +1,27 @@
-# React + TypeScript + Vite
+# To-Do List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é uma aplicação básica de To-Do List construída com ReactJS, TypeScript e Vite. Ele oferece funcionalidades básicas como adicionar, remover, marcar e desmarcar tarefas como concluídas, além de mostrar o progresso de conclusão das mesmas.
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Adicionar uma nova tarefa
+- Remover uma tarefa
+- Marcar uma tarefa como concluída
+- Desmarcar uma tarefa como não concluída
+- Mostrar o progresso de conclusão das tarefas
 
-## Expanding the ESLint configuration
+## Conceitos Aplicados
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Este projeto foi desenvolvido com o intuito de reforçar conceitos básicos do ReactJS. Nele, foram utilizados os seguintes conceitos:
 
-- Configure the top-level `parserOptions` property like this:
+- **Estados**: Gerenciamento de estados para controlar a lista de tarefas e o status de cada uma.
+- **Imutabilidade**: Princípios de imutabilidade para atualização dos estados.
+- **Listas e Chaves**: Renderização de listas e uso de chaves únicas para cada item.
+- **Propriedades**: Passagem de dados entre componentes usando propriedades.
+- **Componentização**: Criação de componentes reutilizáveis e organizados.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Tecnologias Utilizadas
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- ReactJS
+- TypeScript
+- Vite
